@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 require './filemanager.pl';
+require './parsermanager.pl';
 readconfig();
 readinputfile();
 openoutputfile();
