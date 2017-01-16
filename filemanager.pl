@@ -9,10 +9,16 @@ sub readconfig(){
 }
 
 sub readinputfile(){
-	open(inputfile, '<', $properties->getProperty('inputfile.name') or die "Unabe to open ". $properties->getProperty('inputfile.name')).".\n";
+	open($inputfile, '<', $properties->getProperty('inputfile.name')) or die "Unabe to open ". $properties->getProperty('inputfile.name').".\n";
+	print "Readinputfile function runs\n";
 }
 
 sub openoutputfile(){
-	open(inputfile, '>', $properties->getProperty('outputfile.name') or die "Unabe to open ". $properties->getProperty('outputfile.name')).".\n";	
+	open($outputfile, '>', $properties->getProperty('outputfile.name')) or die "Unabe to open ". $properties->getProperty('outputfile.name').".\n";	
+}
+
+sub closefiles(){
+	close $inputfile;
+	close $outputfile;
 }
 1;
