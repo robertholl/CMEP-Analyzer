@@ -1,5 +1,6 @@
 #!/usr/bin/perl
 require './filemanager.pl';
+require './parsermanager.pl';
 readconfig();
 readinputfile();
 openoutputfile();
@@ -9,6 +10,7 @@ my $row = <$inputfile>;
 while(my $row = <$inputfile>){
 	chomp $row;
 	print $outputfile "$row\n";
-	print "$row\n";
+	rowparser($row);
+	#print "$row\n";
 }
 closefiles();
